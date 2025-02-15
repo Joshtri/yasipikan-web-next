@@ -1,19 +1,20 @@
  
 
 export const metadata = {
-  title: "Artikel Yasipikan & Yayasan Sirih Pinang Kebaikan",
+  title: "Artikel Yasipikan",
   description:
     "Temukan artikel terbaru seputar Yasipikan dan Yayasan Sirih Pinang Kebaikan. Dapatkan informasi dan berita terkini dari komunitas kami.",
   keywords: [
     "Yasipikan",
     "Yayasan Sirih Pinang Kebaikan",
+    "yasipikan artikel",
     "artikel",
     "berita",
     "informasi",
     "optimasi"
   ],
   openGraph: {
-    title: "Artikel Yasipikan & Yayasan Sirih Pinang Kebaikan",
+    title: "Artikel Yasipikan",
     description:
       "Temukan artikel terbaru seputar Yasipikan dan Yayasan Sirih Pinang Kebaikan. Dapatkan informasi dan berita terkini dari komunitas kami.",
     url: "https://yayasan-sirih-pinang-kebaikan.com/artikel",
@@ -23,7 +24,7 @@ export const metadata = {
         url: "https://contohwebsite.com/og-image.jpg",
         width: 800,
         height: 600,
-        alt: "Gambar Artikel Yasipikan & Yayasan Sirih Pinang Kebaikan"
+        alt: "Gambar Artikel Yasipikan"
       }
     ],
     locale: "id_ID",
