@@ -2,8 +2,8 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import backgroundImage from '../../public/assets/library1.png';
-import publisherImg from '../../public/assets/publisherImg.jpg';
+// const backgroundImage = { src: '/assets/library1.png' };
+// const publisherImg = '/assets/publisherImg.jpg';
 import RegisterPublisher from '@/components/daftar-publisher/register-publisher';
 
 export default function DaftarPenulisBukuPage() {
@@ -13,12 +13,15 @@ export default function DaftarPenulisBukuPage() {
     registerRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const publisherImg = '/assets/publisherImg.jpg';
+  const backgroundImage = '/assets/library1.png';
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section
         className="relative min-h-[60vh] bg-cover bg-center bg-no-repeat flex items-center"
-        style={{ backgroundImage: `url(${backgroundImage.src})` }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
