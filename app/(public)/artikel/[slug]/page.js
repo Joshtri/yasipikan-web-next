@@ -3,7 +3,7 @@ import ArticleRead from '@/components/article/article-read';
 export async function generateMetadata({ params }) {
   const slug = params.slug;
   // Fetch article details from your API using Next.js cache revalidation options
-  const res = await fetch(`${import.meta.env.NEXT_PUBLIC_BASE_URL}/api/v1/article/temp/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/article/temp/${slug}`, {
     next: { revalidate: 60 } // revalidates the data every 60 seconds
   });
 
@@ -42,6 +42,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ArticleReadPage({ params }) {
-  return <ArticleRead articleSlug={params.slug} />;
+export default function ArticlePage({ params }) {
+  const slug = params.slug;
+  return <ArticleRead articleSlug={slug} />;
 }
