@@ -1,9 +1,16 @@
 import ArticleRead from '@/components/article/article-read';
-import { getArticleDetails } from '@/lib/articles';
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
-  const article = await getArticleDetails(slug);
+  // Fetch article details from your API using Next.js cache revalidation options
+  const res = await fetch(`${import.meta.env.NEXT_PUBLIC_BASE_URL}/api/v1/article/temp/${slug}`, {
+    next: { revalidate: 60 } // revalidates the data every 60 seconds
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch article details');
+  }
+  const article = await res.json();
 
   const title = article?.judul || "Judul Artikel";
   const description = article?.deskripsiSingkat || "Baca artikel menarik kami.";
