@@ -70,7 +70,7 @@ function ArticleMain() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-slate-100">
+    <div className="container mx-auto mt-10 px-4 py-8 bg-slate-100">
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 mt-3">
         ARTIKEL
       </h1>
