@@ -18,7 +18,7 @@ export default function ProductBook({ bookSlug }) {
         const fetchBookBySlug = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/api/v1/books/slug/${bookSlug}`
+                    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/books/slug/${bookSlug}`
                 );
                 // Assuming the API response has the book data in response.data.data
                 setBook(response.data.data);
