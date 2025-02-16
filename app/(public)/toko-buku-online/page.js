@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import backgroundImage from '../../assets/online-shop.png';
+// import backgroundImage from '../../assets/online-shop.png';
 
 export const metadata = {
     title: 'Belanja Buku Online | Toko Buku Yasipikan',
@@ -8,6 +8,8 @@ export const metadata = {
 };
 
 export default function TokoBukuOnline() {
+    const backgroundImage = "/assets/online-shop.png";
+
     return (
         <div
             className="relative bg-cover bg-center bg-no-repeat py-20"
@@ -24,10 +26,8 @@ export default function TokoBukuOnline() {
                     Kami menyediakan berbagai pilihan buku yang dapat Anda beli secara online. Mulai dari buku pelajaran, novel, hingga buku referensi akademik tersedia di toko kami. Jangan lewatkan kesempatan untuk memiliki buku berkualitas dengan harga terbaik.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-16">
-                    <Link href="/toko-buku">
-                        <a className="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                            Kunjungi Toko Online Kami
-                        </a>
+                    <Link href="/toko-buku" className="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Kunjungi Toko Online Kami
                     </Link>
                 </div>
             </div>
