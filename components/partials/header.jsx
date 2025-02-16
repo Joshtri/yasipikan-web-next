@@ -42,7 +42,7 @@ const CustomNavbar = () => {
   };
 
   return (
-    <div className="relative mb-10">
+    <div className="relative mb-16">
       <Navbar
         fluid={true}
         rounded={true}
