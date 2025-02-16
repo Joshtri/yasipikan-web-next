@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
         throw new Error('Failed to fetch book details');
     }
     
-    const book = await res.json();
+    const { data: book } = await res.json();
 
     console.log(book);
     
