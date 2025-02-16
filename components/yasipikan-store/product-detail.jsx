@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaWhatsapp } from "react-icons/fa";
-import { Card, Button } from "flowbite-react";
+import { Button } from "flowbite-react";
 
 export default function DetailProductBook({ bookSlug }) {
   const router = useRouter();
@@ -60,7 +60,7 @@ export default function DetailProductBook({ bookSlug }) {
   const discountedPrice = book.kodeDiskon ? book.harga * 0.9 : book.harga;
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-10">
+    <div className="container mx-auto px-4 py-8">
       <motion.div
         className="bg-white p-6 rounded-lg shadow-md"
         initial={{ opacity: 0, y: 20 }}
