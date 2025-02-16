@@ -14,10 +14,16 @@ export async function generateMetadata({ params }) {
     
     const book = await res.json();
 
-    const title = `Buku: ${book?.slug} - Yayasan Sirih Pinang Kebaikan`;
-    const description = `Cek detail tentang buku ${book?.slug} di Yayasan Sirih Pinang Kebaikan. Temukan buku menarik dan berkualitas.`;
-    const keywords = book?.keywords || 'buku, Yayasan Sirih Pinang Kebaikan, toko buku online';
-    const coverUrl = book?.coverUrl;
+    console.log(book);
+    
+    if (!book || !book.slug) {
+      throw new Error("Data buku tidak lengkap atau tidak ditemukan");
+    }
+    
+    const title = `Buku: ${book.slug} - Yayasan Sirih Pinang Kebaikan`;
+    const description = `Cek detail tentang buku ${book.slug} di Yayasan Sirih Pinang Kebaikan. Temukan buku menarik dan berkualitas.`;
+    const keywords = book.keywords || 'buku, Yayasan Sirih Pinang Kebaikan, toko buku online';
+    const coverUrl = book.coverUrl || '/default-cover.jpg';
 
     return {
         title,
