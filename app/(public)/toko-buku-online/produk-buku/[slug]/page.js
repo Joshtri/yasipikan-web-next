@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     
     const { data: book } = await res.json();
 
-    console.log(book);
+    // console.log(book);
     
     if (!book || !book.slug) {
       throw new Error("Data buku tidak lengkap atau tidak ditemukan");
