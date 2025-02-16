@@ -48,16 +48,14 @@ const CustomNavbar = () => {
         rounded={true}
         className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800"
       >
-        {/* Logo dengan nama brand */}
-        <Navbar.Brand>
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold p-2 text-white">
-              Yayasan Sirih Pinang Kebaikan
-            </span>
-          </Link>
+        {/* Use Navbar.Brand's built-in href prop instead of wrapping with Link */}
+        <Navbar.Brand href="/">
+          <span className="text-2xl font-bold p-2 text-white">
+            Yayasan Sirih Pinang Kebaikan
+          </span>
         </Navbar.Brand>
 
-        {/* Tombol toggle untuk mobile */}
+        {/* Toggle button for mobile */}
         <Navbar.Toggle onClick={toggleNavbar} />
 
         {/* Navbar Links */}
@@ -182,8 +180,6 @@ const CustomNavbar = () => {
           </div>
         </Navbar.Collapse>
       </Navbar>
-      {/* Spacing agar konten tidak tersembunyi di bawah navbar tetap */}
-      {/* <div className="h-20"></div> */}
     </div>
   );
 };
