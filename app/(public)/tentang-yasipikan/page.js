@@ -18,10 +18,7 @@ export const metadata = {
     title: "Tentang Yayasan Sirih Pinang Kebaikan",
     description:
       "Menyatukan kebaikan, membangun masa depan yang lebih cerah bersama YaSi ▋PiKan.",
-    image: {
-        src: "/images/yasipikan-logo.png",
-        alt: "Logo Yayasan Sirih Pinang",
-    },
+
     },
 };
 

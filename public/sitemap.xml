@@ -8,7 +8,18 @@
         <priority>1.00</priority>
     </url>
     <url>
+        <loc>https://yayasan-sirih-pinang-kebaikan.com/tentang-yasipikan</loc>
+        <lastmod>2025-02-20T02:44:33+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://yayasan-sirih-pinang-kebaikan.com/kontak</loc>
+        <lastmod>2025-02-20T02:44:33+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://yayasan-sirih-pinang-kebaikan.com/visi-misi</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
@@ -46,31 +57,36 @@
     </url>
 
     <url>
-        <loc>https://yayasan-sirih-pinang-kebaikan.com/artikel/2-raja-raja-2-19-22-elisa-menyembuhkan-mata-air-di-yerikho</loc>
+        <loc>
+            https://yayasan-sirih-pinang-kebaikan.com/artikel/2-raja-raja-2-19-22-elisa-menyembuhkan-mata-air-di-yerikho</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://yayasan-sirih-pinang-kebaikan.com/artikel/kejadian-26-17-22-air-untuk-didistribusikan-bukan-diperebutkan</loc>
+        <loc>
+            https://yayasan-sirih-pinang-kebaikan.com/artikel/kejadian-26-17-22-air-untuk-didistribusikan-bukan-diperebutkan</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://yayasan-sirih-pinang-kebaikan.com/artikel/ulangan-8-1-20-saat-untuk-mengingat-kebaikan-tuhan</loc>
+        <loc>
+            https://yayasan-sirih-pinang-kebaikan.com/artikel/ulangan-8-1-20-saat-untuk-mengingat-kebaikan-tuhan</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://yayasan-sirih-pinang-kebaikan.com/artikel/lukas-3-1-20-yohanes-pembaptis-dan-yesus</loc>
+        <loc>
+            https://yayasan-sirih-pinang-kebaikan.com/artikel/lukas-3-1-20-yohanes-pembaptis-dan-yesus</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://yayasan-sirih-pinang-kebaikan.com/artikel/lukas-2:8-20-marilah-kita-pergi-ke-betlehem</loc>
+        <loc>
+            https://yayasan-sirih-pinang-kebaikan.com/artikel/lukas-2:8-20-marilah-kita-pergi-ke-betlehem</loc>
         <lastmod>2025-02-20T02:44:33+00:00</lastmod>
         <priority>0.80</priority>
     </url>
