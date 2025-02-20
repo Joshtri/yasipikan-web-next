@@ -58,7 +58,7 @@ export default function HomeServices() {
               <div className="flex justify-center mb-1">
                 <FaRegCheckCircle className="text-4xl text-sky-500 transform transition hover:scale-150" />
               </div>
-              <Link href="/cek-progress">
+              <Link href="/cek-progress-buku-publish">
                 <h2 className="text-lg font-semibold transform transition hover:scale-110">
                   CEK PROGRESS BUKU
                 </h2>
@@ -80,7 +80,7 @@ export default function HomeServices() {
               <div className="flex justify-center mb-1">
                 <FaStore className="text-4xl text-sky-500 transform transition hover:scale-150" />
               </div>
-              <Link href="/toko-buku">
+              <Link href="/toko-buku-online">
                 <h2 className="text-lg font-semibold transform transition hover:scale-110">
                   YASIPIKAN STORE
                 </h2>
