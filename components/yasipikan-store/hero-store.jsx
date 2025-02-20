@@ -1,15 +1,11 @@
+import React from "react";
 
-
-
-import React from 'react'
-import Link from "next/link";
-
-export default function HeroStore() {
-    const backgroundImage = "/assets/online-shop.png";
+export default function HeroStore({ scrollToMainStore }) {
+  const backgroundImage = "/assets/online-shop.png";
 
   return (
     <>
-          <div
+      <div
         className="relative bg-cover bg-center bg-no-repeat py-20"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -30,15 +26,18 @@ export default function HeroStore() {
             Jangan lewatkan kesempatan untuk memiliki buku berkualitas dengan harga terbaik.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-16">
-            <Link
-              href="/toko-buku"
+            <button
+              onClick={() => {
+                console.log("Scrolling to MainStore...");
+                scrollToMainStore();
+              }}
               className="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               Kunjungi Toko Online Kami
-            </Link>
+            </button>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
