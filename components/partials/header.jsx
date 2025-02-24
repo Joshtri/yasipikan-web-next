@@ -46,7 +46,7 @@ const CustomNavbar = () => {
       <Navbar
         fluid={true}
         rounded={true}
-        className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800"
+        className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-800"
       >
         {/* Use Navbar.Brand's built-in href prop instead of wrapping with Link */}
         <Navbar.Brand href="/">
