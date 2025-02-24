@@ -14,6 +14,7 @@ function ArticleMain() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const [loadingButtonId, setLoadingButtonId] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -67,6 +68,12 @@ function ArticleMain() {
     const shareUrl = window.location.href;
     navigator.clipboard.writeText(`${title} - ${shareUrl}`);
     alert('Link artikel berhasil disalin!');
+  };
+
+  // New function to handle "Baca" button click with loading state
+  const handleReadArticleClick = async (postId, slug) => {
+    setLoadingButtonId(postId);
+    await router.push(`/artikel/${slug}`);
   };
 
   return (
@@ -140,11 +147,18 @@ function ArticleMain() {
                 {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-auto pt-4 border-t">
                   <button
-                    onClick={() => router.push(`/artikel/${post.slug}`)}
-                    className="bg-blue-700 text-white px-4 py-2 rounded-full inline-flex items-center space-x-2 hover:bg-blue-500 transition text-sm"
+                    onClick={() => handleReadArticleClick(post._id, post.slug)}
+                    disabled={loadingButtonId === post._id}
+                    className="bg-blue-700 text-white px-4 py-2 rounded-full inline-flex items-center space-x-2 hover:bg-blue-500 transition text-sm disabled:opacity-50"
                   >
-                    <FaBookOpen className="text-sm" />
-                    <span>Baca</span>
+                    {loadingButtonId === post._id ? (
+                      <span>Loading...</span>
+                    ) : (
+                      <>
+                        <FaBookOpen className="text-sm" />
+                        <span>Baca</span>
+                      </>
+                    )}
                   </button>
                   <button
                     onClick={() => handleShare(post.judul)}
