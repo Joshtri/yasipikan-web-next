@@ -17,7 +17,7 @@ export default function RootPage() {
       <HomeServices/>
 
 
-      <GallerySection/>
+      {/* <GallerySection/> */}
 
       <ArticleSection/>
     </div>
