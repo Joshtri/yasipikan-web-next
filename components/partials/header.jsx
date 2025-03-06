@@ -50,7 +50,7 @@ const CustomNavbar = () => {
       >
         {/* Use Navbar.Brand's built-in href prop instead of wrapping with Link */}
         <Navbar.Brand href="/">
-          <span className="text-2xl font-bold p-2 text-white">
+          <span className="text-xl font-bold p-2 text-white">
             Yayasan Sirih Pinang Kebaikan
           </span>
         </Navbar.Brand>
