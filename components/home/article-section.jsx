@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
 import { FiUser } from "react-icons/fi";
 import { FaRightLong, FaLeftLong } from "react-icons/fa6";
-
-
 import Link from "next/link";
 
 export default function ArticleSection() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const scrollRef = useRef(null);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollLeftPos = useRef(0);
 
     useEffect(() => {
         const fetchArticles = async () => {
@@ -42,6 +42,28 @@ export default function ArticleSection() {
         scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
     };
 
+    const handleMouseDown = (e) => {
+        isDragging.current = true;
+        startX.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeftPos.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+        isDragging.current = false;
+    };
+
+    const handleMouseUp = () => {
+        isDragging.current = false;
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX.current) * 2; // speed multiplier
+        scrollRef.current.scrollLeft = scrollLeftPos.current - walk;
+    };
+
     return (
         <div className="relative overflow-hidden py-12 bg-gray-100">
             <h1 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
@@ -54,27 +76,28 @@ export default function ArticleSection() {
                 <p className="text-center text-gray-500">Tidak ada artikel tersedia.</p>
             ) : (
                 <div className="relative">
-                    {/* Tombol navigasi */}
+                    {/* Buttons */}
                     <button
                         onClick={scrollLeft}
                         className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-100"
                     >
-                        <FaLeftLong size={24} />
+                        <FaLeftLong size={20} />
                     </button>
                     <button
                         onClick={scrollRight}
                         className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-100"
                     >
-                        <FaRightLong size={24} />
+                        <FaRightLong size={20} />
                     </button>
 
-                    {/* Scrollable container */}
-                    <motion.div
+                    {/* Scrollable container with drag */}
+                    <div
                         ref={scrollRef}
-                        className="flex space-x-8 overflow-x-auto scroll-smooth px-4 pb-4"
-                        drag="x"
-                        dragConstraints={{ left: -1000, right: 0 }}
-                        whileTap={{ cursor: "grabbing" }}
+                        className="flex space-x-8 overflow-x-auto scroll-smooth px-4 pb-4 cursor-grab active:cursor-grabbing"
+                        onMouseDown={handleMouseDown}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseUp={handleMouseUp}
+                        onMouseMove={handleMouseMove}
                     >
                         {articles.map((article, index) => (
                             <div
@@ -104,7 +127,7 @@ export default function ArticleSection() {
                                 </div>
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             )}
         </div>
